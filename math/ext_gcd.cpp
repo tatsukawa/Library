@@ -4,23 +4,15 @@ using namespace std;
 using ll = int64_t;
 using P = std::pair<int, int>;
 
-ll gcd(ll a, ll b) {
-    if(a < b) {
-        swap(a, b);
-    }
 
-    ll ret;
+template<class T>
+T gcd(const T& a, const T& b){
+    return __gcd(a,b);
+}
 
-    while(true) {
-        ret = a % b;
-        if(ret == 0) {
-            break;
-        }
-        a = b;
-        b = ret;
-    }
-
-    return b;
+template<class T>
+T lcm(const T& a, const T& b){
+    return a*b/__gcd(a,b);
 }
 
 // TODO:
