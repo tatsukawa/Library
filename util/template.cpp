@@ -23,7 +23,7 @@ template<class T>
 ostream& operator <<(ostream& os, const vector<T> &v){
     cout << get_variable_name(v) << " = [";
     for(auto i : v) 
-        os << " " << v[i];
+        os << " " << i;
     os << " ]";
     return os;
 }
@@ -38,4 +38,3 @@ int main() {
     cout << a << endl;
     cout << v << endl;
 }
-
