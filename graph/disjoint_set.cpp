@@ -32,7 +32,7 @@ ostream& operator <<(ostream& os, const vector<T> &v){
 
 const int INF = 1e8;
 
-struct UF {
+struct disjoint_set {
     int size;
     vector<int> par;
     vector<int> rank;
