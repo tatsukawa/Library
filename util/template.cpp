@@ -2,6 +2,7 @@
 
 #define get_variable_name(x) #x
 #define debug(x) cout << #x << " = " << x << endl
+#define rep(i, begin, end) for(int (i) = (begin); (i) < (end); (i)++)
 
 #define ALL(x) (x).begin(), (x).end()
 #define SORT(x) sort((x).begin(), (x).end())
