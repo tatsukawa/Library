@@ -44,14 +44,9 @@ struct disjoint_set {
         }
     }
 
-    int find(int x) {
-        if(par[x] == x) return x;
-        else return par[x] = find(par[x]);
-    }
-
     void unite(int x, int y) {
-        x = find(x);
-        y = find(y);
+        x = root(x);
+        y = root(y);
         if(x == y) return;
 
         if(rank[x] < rank[y]) par[x] = y;
@@ -62,7 +57,7 @@ struct disjoint_set {
     }
 
     bool same(int x, int y) {
-        return find(x) == find(y);
+        return root(x) == root(y);
     }
 
     int root(int x) {
