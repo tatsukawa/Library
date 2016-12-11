@@ -37,7 +37,7 @@ struct disjoint_set {
     vector<int> par;
     vector<int> rank;
 
-    UF(int n) : size(n) {
+    disjoint_set(int n) : size(n) {
         for(int i = 0; i < n; i++) {
             par.emplace_back(i);
             rank.emplace_back(0);
@@ -63,6 +63,10 @@ struct disjoint_set {
 
     bool same(int x, int y) {
         return find(x) == find(y);
+    }
+
+    int root(int x) {
+        return (par[x] == x ? x : par[x] = root(par[x]));
     }
 };
 
